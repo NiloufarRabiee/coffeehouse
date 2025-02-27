@@ -8,231 +8,197 @@
 import SwiftUI
 
 struct OrderView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.colorScheme) var colorScheme
+
     var body: some View {
         VStack {
-   
-            HStack {
-                Button(action: {
-              
-                }) {
-                    Image(systemName: "chevron.left")
-                        .foregroundColor(.black)
-                        .font(.title2)
-                }
-                Spacer()
-                Text("Order")
-                    .font(.headline)
-                    .foregroundColor(.black)
-                Spacer()
-                Button(action: {
-                
-                }) {
-                    Image(systemName: "ellipsis")
-                        .foregroundColor(.black)
-                        .font(.title2)
-                }
-            }
-            .padding()
-            
-           
-            HStack {
-                Button(action: {}) {
-                    Text("Deliver")
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.orange)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
-                
-                Button(action: {}) {
-                    Text("Pickup")
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.gray.opacity(0.2))
-                        .foregroundColor(.black)
-                        .cornerRadius(10)
-                }
-            }
-            .padding(.horizontal)
-            
-          
-            VStack(alignment: .leading, spacing: 4) {
-                Text("Deliver Address")
-                    .font(.headline)
-                
-                Text("Jl.Oisbh youi")
-                    .font(.subheadline)
-                    .bold()
-                
-                Text("123 Meadowbrook Avenue, Willowbrook Heights")
-                    .foregroundColor(.gray)
-                    .font(.footnote)
-                
-                HStack {
-                    Button(action: {}) {
-                        HStack {
-                            Image(systemName: "pencil")
-                            Text("Edit Address")
-                        }
-                        .padding()
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
-                    }
-                    
-                    Button(action: {}) {
-                        HStack {
-                            Image(systemName: "note.text")
-                            Text("Add Note")
-                        }
-                        .padding()
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
-                    }
-                }
-            }
-            .padding()
-            
-            Divider()
-            
-     
-            HStack {
-            
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.gray.opacity(0.3))
-                    .frame(width: 50, height: 50)
-                    .overlay(
-                        Text("Image")
-                            .foregroundColor(.white)
-                            .font(.caption)
-                    )
-                
-                VStack(alignment: .leading) {
-                    Text("Cappuccino")
+               
+                VStack(alignment: .leading, spacing: 4) {
+                    Text("Deliver Address")
                         .font(.headline)
-                    Text("With chocolate")
+                    
+                    Text("Niloufar Rabiee")
+                        .font(.subheadline)
+                        .bold()
+                    
+                    Text("123 Meadowbrook Cal, Willowbrook Heights")
                         .foregroundColor(.gray)
                         .font(.footnote)
-                }
-                
-                Spacer()
-                
-                HStack {
-                    Button(action: {}) {
-                        Image(systemName: "plus.circle")
-                            .font(.title3)
-                            .foregroundColor(.black)
+                    
+                    HStack {
+                        Button(action: {}) {
+                            HStack {
+                                Image(systemName: "pencil")
+                                Text("Edit Address")
+                            }
+                            .padding()
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
+                        }
+                        
+                        Button(action: {}) {
+                            HStack {
+                                Image(systemName: "note.text")
+                                Text("Add Note")
+                            }
+                            .padding()
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray, lineWidth: 1))
+                        }
                     }
-                    
-                    Text("1")
-                        .font(.headline)
-                        .padding(.horizontal, 10)
-                    
-                    Button(action: {}) {
-                        Image(systemName: "minus.circle")
-                            .font(.title3)
-                            .foregroundColor(.black)
-                    }
-                }
-            }
-            .padding()
-            
-            Divider()
-            
-          
-            HStack {
-                Image(systemName: "tag.fill")
-                    .foregroundColor(.orange)
-                
-                Text("1 discount is applied")
-                    .font(.subheadline)
-                
-                Spacer()
-                
-                Button(action: {}) {
-                    Image(systemName: "chevron.right")
-                        .foregroundColor(.gray)
-                }
-            }
-            .padding()
-            .background(RoundedRectangle(cornerRadius: 10).fill(Color.gray.opacity(0.1)))
-            .padding(.horizontal)
-        
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Payment Summary")
-                    .font(.headline)
-                
-                HStack {
-                    Text("Price")
-                        .foregroundColor(.gray)
-                    Spacer()
-                    Text("$4.59")
-                        .font(.headline)
-                }
-                
-                HStack {
-                    Text("Delivery Fee")
-                        .foregroundColor(.gray)
-                    Spacer()
-                    Text("$2.0")
-                        .strikethrough()
-                        .foregroundColor(.gray)
-                    
-                    Text("$1.0")
-                        .font(.headline)
-                }
+                }.frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
                 
                 Divider()
                 
+             
                 HStack {
-                    Text("Total Payment")
-                        .font(.headline)
-                    Spacer()
-                    Text("$5.59")
-                        .font(.headline)
-                }
-            }
-            .padding()
-            
-            Spacer()
-            
-        
-            VStack {
-                HStack {
-                    HStack {
-                        Image(systemName: "creditcard.fill")
-                            .foregroundColor(.orange)
-                        Text("Cash")
-                            .foregroundColor(.black)
-                        Text("$5.59")
+                
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.gray.opacity(0.3))
+                        .frame(width: 50, height: 50)
+                        .overlay(
+                            Text("Image")
+                                .foregroundColor(.white)
+                                .font(.caption)
+                        )
+                    
+                    VStack(alignment: .leading) {
+                        Text("Cappuccino")
                             .font(.headline)
+                        Text("With chocolate")
+                            .foregroundColor(.gray)
+                            .font(.footnote)
                     }
+                    
+                    Spacer()
+                    
+                    HStack {
+                        Button(action: {}) {
+                            Image(systemName: "plus.circle")
+                                .font(.title3)
+                                .foregroundColor(.black)
+                        }
+                        
+                        Text("1")
+                            .font(.headline)
+                            .padding(.horizontal, 10)
+                        
+                        Button(action: {}) {
+                            Image(systemName: "minus.circle")
+                                .font(.title3)
+                                .foregroundColor(.black)
+                        }
+                    }
+                }
+                .padding()
+                
+                Divider()
+                
+              
+                HStack {
+                    Image(systemName: "tag.fill")
+                        .foregroundColor(.accentColor)
+                    
+                    Text("1 discount is applied")
+                        .font(.subheadline)
                     
                     Spacer()
                     
                     Button(action: {}) {
-                        Image(systemName: "ellipsis")
-                            .foregroundColor(.black)
+                        Image(systemName: "chevron.right")
+                            .foregroundColor(.gray)
                     }
                 }
                 .padding()
-                .background(RoundedRectangle(cornerRadius: 10).fill(Color.gray.opacity(0.1)))
+                .background(RoundedRectangle(cornerRadius: 10).fill(Color(.secondarySystemBackground)))
                 .padding(.horizontal)
-                
-             
-                Button(action: {}) {
-                    Text("Order")
+            
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("Payment Summary")
                         .font(.headline)
-                        .foregroundColor(.white)
-                        .padding()
-                        .frame(maxWidth: .infinity)
-                        .background(Color.orange)
-                        .cornerRadius(12)
+                    
+                    HStack {
+                        Text("Price")
+                            .foregroundColor(.gray)
+                        Spacer()
+                        Text("$4.59")
+                            .font(.headline)
+                    }
+                    
+                    HStack {
+                        Text("Delivery Fee")
+                            .foregroundColor(.gray)
+                        Spacer()
+                        Text("$2.0")
+                            .strikethrough()
+                            .foregroundColor(.gray)
+                        
+                        Text("$1.0")
+                            .font(.headline)
+                    }
+                    
+                    Divider()
+                    
+                    HStack {
+                        Text("Total Payment")
+                            .font(.headline)
+                        Spacer()
+                        Text("$5.59")
+                            .font(.headline)
+                    }
                 }
                 .padding()
+                
+                Spacer()
+                
+            
+                VStack {
+                    HStack {
+                        HStack {
+                            Image(systemName: "creditcard.fill")
+                                .foregroundColor(.accentColor)
+                            Text("Cash")
+                                .foregroundColor(.primary)
+                            Text("$5.59")
+                                .font(.headline)
+                                .foregroundColor(.primary)
+                        }
+                        
+                        Spacer()
+                        
+                        Button(action: {}) {
+                            Image(systemName: "ellipsis")
+                                .foregroundColor(.black)
+                        }
+                    }
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color(.secondarySystemBackground)))
+                    .padding(.horizontal)
+                    
+                 
+                    NavigationLink(destination: DeliveryView()) {
+                        Text("Order")
+                            .font(.headline)
+                            .foregroundColor(.white)
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .background(Color.accentColor)
+                            .cornerRadius(12)
+                    }
+                    .padding()
+                }
+            }
+            .background(Color(.systemBackground).edgesIgnoringSafeArea(.all))
+           
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    
+                }
             }
         }
-        .background(Color.white.edgesIgnoringSafeArea(.all))
     }
-}
+
 
 
 struct OrderView_Previews: PreviewProvider {

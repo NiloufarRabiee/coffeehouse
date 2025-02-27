@@ -7,48 +7,20 @@
 
 import SwiftUI
 
-struct DeliveryTrackingView: View {
+struct DeliveryView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         VStack {
-            // Map Placeholder
-            ZStack {
-                Rectangle()
-                    .fill(Color.gray.opacity(0.3)) // Placeholder for the map
-                    .frame(height: 300)
-                    .overlay(
-                        VStack {
-                            Image(systemName: "map")
-                                .foregroundColor(.white)
-                                .font(.largeTitle)
-                            Text("Map Placeholder")
-                                .foregroundColor(.white)
-                                .font(.caption)
-                        }
-                    )
-                
             
-                HStack {
-                    Button(action: {
-                        
-                    }) {
-                        Image(systemName: "chevron.left")
-                            .padding()
-                            .background(Circle().fill(Color.white))
-                            .shadow(radius: 2)
-                    }
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                   
-                    }) {
-                        Image(systemName: "mappin.and.ellipse")
-                            .padding()
-                            .background(Circle().fill(Color.white))
-                            .shadow(radius: 2)
-                    }
-                }
-                .padding()
+            
+            ZStack(alignment: .leading) {
+                Image("map")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 400)
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
+               
             }
             
           
@@ -99,14 +71,12 @@ struct DeliveryTrackingView: View {
             VStack {
                 HStack {
                    
-                    Circle()
-                        .fill(Color.gray.opacity(0.3))
-                        .frame(width: 50, height: 50)
-                        .overlay(
-                            Text("Img")
+                   
+                            Image("man")
+                        .clipShape(Circle())
                                 .foregroundColor(.white)
                                 .font(.caption)
-                        )
+                        
                     
                     VStack(alignment: .leading) {
                         Text("peanut smith")
@@ -122,11 +92,16 @@ struct DeliveryTrackingView: View {
                     Button(action: {
                 
                     }) {
-                        Image(systemName: "phone.fill")
+                        Image(systemName: "phone.circle.fill")
+                            .resizable()
+                            .frame(width: 55, height: 55)
                             .foregroundColor(.green)
-                            .padding()
-                            .background(Circle().fill(Color.white))
-                            .shadow(radius: 2)
+                            .background(Color.white)
+                            .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 2)
+                        
+                            .clipShape(RoundedRectangle(cornerRadius: 12))
+                        
                     }
                 }
                 .padding()
@@ -135,13 +110,14 @@ struct DeliveryTrackingView: View {
             
             Spacer()
         }
-        .background(Color.white.edgesIgnoringSafeArea(.all))
+        
     }
+       
 }
 
 
 struct DeliveryTrackingView_Previews: PreviewProvider {
     static var previews: some View {
-        DeliveryTrackingView()
+        DeliveryView()
     }
 }

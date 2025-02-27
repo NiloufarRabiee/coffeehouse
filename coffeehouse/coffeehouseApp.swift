@@ -18,6 +18,7 @@ struct coffeehouseApp: App {
     var body: some Scene {
         WindowGroup {
             LandingPageView()
+                .preferredColorScheme(.dark)
         }
     }
 }
