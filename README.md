@@ -3,7 +3,7 @@
 # ☕️ CoffeeHouse App  
 _“Awaken Your Senses, One Sip at a Time!”_
 
-<img src="assets/1752949414220.png" width="650"/>
+<img src="assets/1752949414220.png"/>
 
 A beautifully crafted iOS coffee-ordering app that combines comfort, clarity, and convenience.  
 Designed for speed, satisfaction, and seamless delivery.
