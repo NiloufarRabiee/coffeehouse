@@ -77,8 +77,3 @@ MIT License © 2025 Niloufar Rabiee
 
 
 ```markdown
-<p align="center">
-  <img src="assets/coffeehouse-1.png" width="170"/>
-  <img src="assets/coffeehouse-2.png" width="170"/>
-  <img src="assets/coffeehouse-3.png" width="170"/>
-</p>
